@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<!-- -------------- Start Head ----------------------------- -->
+<head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="x-ua-compatible" content="ie=edge">
+	  <title>Kayla Louise Web Solutions: The Process</title>
+	  <meta name="description" content="As a client, your are part of the design process every step of the way. Learn more about my process I use to design sites here">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" type="text/css" href="stylesheets/mainStyle.css" >
+</head>
+<!-- ------------------ End Head -------------------------- -->
+<!-- ------------------ Start Body -------------------------- -->
+<body>
+<!-- ----------------- Slides Containing Pictures of the design process --------------------- -->
+	<div class="slides">
+		<img src="images/siteMap.png" alt="After research your business needs, I draw up a site map that shows the basic site architecture"/>
+		<img src="images/wireframe.jpg" alt="After setting up the basic architecture, I then draw up a wireframe so you can see how content will look on your site" />
+		<img src="images/comps.jpg" alt="The next step is designing, I create a few samples of what the site will look like. You will then get to choose which design you like best" />	
+	    <img src="images/finalASRsite.png" alt="The last step is making your site live, there are no suprises since you are in the loop during the whole design process" />	
+	    <img src="images/introPicture.jpg" />
+	</div>
+<!-- --------------------------- End of Slides ---------------------- -->
+
+<!-- ----------- Paragraphs that will appear or disappear based on buttons clicked ------ -->
+		<div>
+			<p id="no1">1. After research your business needs, I draw up a site map that shows the basic site architecture.</p>  
+			<p id="no2">2. After setting up the basic architecture, I then draw up a wireframe so you can see how content will look on your site.</p> 
+			<p id="no3">3. The next step is designing, I create a few samples of what the site will look like. You will then get to choose which design you like best.</p> 
+			<p id="no4">4. The last step is making your site live, there are no suprises since you are in the loop during the whole design process.</p>
+		</div>
+<!-- ------------------- End of Paragraphs----------------------- -->
+
+<!-- ---------------Clickable list thanks to jquery ------------------------ -->
+	<div class="clickMe">
+		<ol class="superCodeyay">
+			<li id="btn1">Research & Site Maps</li>
+			<li id="btn2">Wireframing</li>
+			<li id="btn3">Site Comps</li>
+			<li id="btn4">Final Site</li>
+		</ol>
+	</div>
+  
+ <!-- ---------------- End of clickable list ----------------- -->
+
+  
+  <!-- --------------------Scripts ------------------- -->
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> //load jquery
+	  <script>
+	  // First Script
+	  //this script uses simple jquery to create changing pictures based on what is clicked
+	  //this works because all pictures are layered on top of each other
+	  //when a list item is clicked, the related picture pops to the top
+
+		$(document).ready(function() { // loads script when document is ready
+			var count = $('.slides img').length; // grabs all DOM elements img with class slides, counts number
+			//console.log(count); //used during debugging
+			
+			
+			$('.superCodeyay li').click(function() { //when li element with class superCodeyay is clicked, calls fx
+				
+				$('.slides img').removeClass('active'); //removes active class which will change the z-index
+				
+				var slide_index = $(this).index(); //takes current slide and returns index#
+				//console.log(slide_index); //used during debugging
+				var $slide = $('.slides img:eq('+slide_index+')'); //image gets replaced via dom element index increase
+				
+				$slide.addClass('active'); //adds an active class to current slide
+
+			});
+			
+		});
+
+	//Second Script
+	//Second script works by hiding all p elements upon document load
+	//As buttons/lists are clicked corresponding paragraphs are then toggled between hide and show states
+
+		$(document).ready(function() { //loads script when document is loaded
+		$("p").hide(); //hides all paragraph elements
+		$("#btn1").click(function(){ //adds event listener to li element with btn1 id
+			$("#no1").toggle(); //toggles the state of no1 between hide and show states
+		});
+		$("#btn2").click(function(){ //adds event listener to li element with btn3 id
+			$("#no2").toggle(); //toggles the state of no2 between hide and show states
+		});
+		$("#btn3").click(function(){ //adds event listener to li element with btn4 id
+			$("#no3").toggle(); //toggles the state of no3 between hide and show states
+		});
+		$("#btn4").click(function(){ //adds event listener to li element with btn4 id
+			$("#no4").toggle(); //toggles the state of no4 between hide and show states
+		});
+	});
+		
+  </script>
+  <!-- ---------------------- End of Scripts ------------------------- -->
+</body>
+</html>
+  

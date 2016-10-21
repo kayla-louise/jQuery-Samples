@@ -1,0 +1,45 @@
+
+/* CSS Document */
+/* Kayla Cook */
+/* Css mainStyle.css */
+
+
+/* Slide Styles */
+    .slides {
+    	position: relative;
+		width: 1000px;
+		height: 600px;
+		border: solid 10px black;
+    }
+	.slides img {
+		position: absolute;
+		left: 10%;
+	}
+	
+	.slides img.active {
+		z-index: 100;
+	}
+/* Main Stlyes */
+	body {
+		background-color: black;
+		color: light-blue;
+		text-align:center;
+	}
+	.clickme {
+		background-color: light-blue;
+		color: black;
+		font-size: 36px;
+	}
+	ol li {
+		color: black;
+		font-size:24px;
+		background-color: rgba(10, 161, 169, 0.9);
+		border: double 10px white;
+		text-align:center;
+		display: inline-block;
+	}
+	p {
+		font-size:18px;
+		color: white;
+	}
+	
